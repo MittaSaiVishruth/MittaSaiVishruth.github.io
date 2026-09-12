@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mitta Sai Vishruth — Data Science and Artificial Intelligence student, builder, hackathon participant, and campus event organizer." />
+  <title>Mitta Sai Vishruth | AI & Data Science</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07090d;
+      --panel: #0d1118;
+      --panel-2: #111722;
+      --text: #f5f7fb;
+      --muted: #a7b0c0;
+      --line: rgba(255,255,255,.09);
+      --accent: #7c8cff;
+      --accent-2: #54e1c6;
+      --max: 1120px;
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 80% 5%, rgba(124,140,255,.16), transparent 24rem),
+        radial-gradient(circle at 15% 18%, rgba(84,225,198,.08), transparent 22rem),
+        var(--bg);
+      font-family: Inter, system-ui, sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
+    nav {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(7,9,13,.72);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner { height: 72px; display:flex; align-items:center; justify-content:space-between; }
+    .brand { font-family:"Space Grotesk", sans-serif; font-weight:700; letter-spacing:-.03em; }
+    .brand span { color: var(--accent-2); }
+    .nav-links { display:flex; gap: 24px; color: var(--muted); font-size:.93rem; }
+    .nav-links a:hover { color:var(--text); }
+    .hero { padding: 112px 0 90px; }
+    .eyebrow {
+      display:inline-flex; align-items:center; gap:9px; padding:8px 12px;
+      border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.03);
+      color:#c8cfdd; font-size:.82rem; font-weight:600;
+    }
+    .dot { width:8px; height:8px; border-radius:50%; background:var(--accent-2); box-shadow:0 0 16px rgba(84,225,198,.7); }
+    h1, h2, h3 { font-family:"Space Grotesk", sans-serif; line-height:1.1; }
+    h1 { max-width: 900px; font-size: clamp(3.1rem, 8vw, 6.5rem); letter-spacing:-.065em; margin:24px 0 22px; }
+    .gradient { background: linear-gradient(110deg, #fff, #b6c0ff 45%, #71e8d3); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .hero p { max-width: 760px; color:var(--muted); font-size:1.12rem; margin:0 0 30px; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; }
+    .btn { padding:13px 17px; border-radius:13px; border:1px solid var(--line); font-weight:700; font-size:.92rem; transition:.2s ease; }
+    .btn.primary { background:var(--text); color:#090b0f; border-color:transparent; }
+    .btn:hover { transform:translateY(-2px); }
+    .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:52px; }
+    .stat { padding:20px; background:rgba(255,255,255,.035); border:1px solid var(--line); border-radius:16px; }
+    .stat strong { display:block; font-size:1.7rem; font-family:"Space Grotesk"; }
+    .stat span { color:var(--muted); font-size:.85rem; }
+    section { padding:88px 0; }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:24px; margin-bottom:30px; }
+    .section-kicker { color:var(--accent-2); text-transform:uppercase; letter-spacing:.16em; font-weight:700; font-size:.74rem; }
+    h2 { font-size:clamp(2rem, 4vw, 3.2rem); letter-spacing:-.045em; margin:8px 0 0; }
+    .section-head p { color:var(--muted); max-width:480px; margin:0; }
+    .about-grid, .contact-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:18px; }
+    .panel { background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02)); border:1px solid var(--line); border-radius:var(--radius); padding:28px; }
+    .panel p { color:var(--muted); margin-top:0; }
+    .chips { display:flex; flex-wrap:wrap; gap:9px; margin-top:22px; }
+    .chip { padding:8px 11px; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.025); color:#dbe1eb; font-size:.83rem; }
+    .project-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+    .project { min-height:250px; display:flex; flex-direction:column; justify-content:space-between; }
+    .project .tag { color:var(--accent); font-size:.76rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+    .project h3 { font-size:1.45rem; margin:13px 0 10px; }
+    .project p { color:var(--muted); }
+    .project .meta { color:#d6dce7; font-size:.83rem; margin-top:18px; }
+    .timeline { display:grid; gap:14px; }
+    .item { position:relative; padding:24px 24px 24px 28px; border-left:2px solid rgba(124,140,255,.45); background:rgba(255,255,255,.025); border-radius:0 18px 18px 0; }
+    .item h3 { margin:0 0 5px; font-size:1.2rem; }
+    .item .when { color:var(--accent-2); font-size:.8rem; font-weight:700; }
+    .item p { color:var(--muted); margin:10px 0 0; }
+    .contact-card { display:flex; flex-direction:column; justify-content:center; min-height:280px; }
+    .contact-links { display:grid; gap:12px; margin-top:20px; }
+    .contact-link { display:flex; align-items:center; justify-content:space-between; padding:14px 15px; background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:13px; }
+    .contact-link small { color:var(--muted); }
+    footer { padding:34px 0 50px; color:#7f8899; font-size:.82rem; text-align:center; border-top:1px solid var(--line); }
+    @media (max-width: 850px) {
+      .nav-links { display:none; }
+      .stats { grid-template-columns:repeat(2,1fr); }
+      .about-grid, .contact-grid, .project-grid { grid-template-columns:1fr; }
+      .hero { padding-top:86px; }
+    }
+    @media (max-width: 520px) {
+      .container { width:min(calc(100% - 26px), var(--max)); }
+      .stats { grid-template-columns:1fr 1fr; }
+      .stat { padding:15px; }
+      section { padding:66px 0; }
+      h1 { font-size:3.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="#top">Mitta<span>.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow"><span class="dot"></span> Data Science & Artificial Intelligence · IIIT Dharwad</div>
+        <h1>Building with <span class="gradient">AI</span>, learning by making.</h1>
+        <p>I’m Mitta Sai Vishruth, a second-year DSAI student exploring machine learning, generative AI, agentic workflows, and AI-assisted development — while helping build better student experiences on campus.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore my work</a>
+          <a class="btn" href="https://github.com/MittaSaiVishruth" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <a class="btn" href="https://www.linkedin.com/in/mitta-sai-vishruth-6b024038a" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>1st</strong><span>Iris Hackathon · Winner</span></div>
+          <div class="stat"><strong>3+</strong><span>Hackathons & technical events</span></div>
+          <div class="stat"><strong>16+</strong><span>Teams supported in esports event</span></div>
+          <div class="stat"><strong>2029</strong><span>Expected B.Tech graduation</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="section-kicker">About</div><h2>Curious about systems. Serious about building.</h2></div>
+        </div>
+        <div class="about-grid">
+          <div class="panel">
+            <p>I study Data Science and Artificial Intelligence at the Indian Institute of Information Technology Dharwad. My interests sit at the intersection of <strong>machine learning, generative AI, AI agents, and practical developer tooling</strong>.</p>
+            <p>I like learning through projects: experimenting with Google ADK, Claude MCP, Blender, Roblox, local models, and data-science workflows. I’m also active in student events and currently work with a campus club’s event-management team.</p>
+            <p>Long term, I want to build useful AI systems and help other students become confident builders with emerging AI tools.</p>
+          </div>
+          <div class="panel">
+            <h3>Toolbox</h3>
+            <div class="chips">
+              <span class="chip">Python</span><span class="chip">NumPy</span><span class="chip">Pandas</span><span class="chip">Matplotlib</span>
+              <span class="chip">Scikit-learn</span><span class="chip">LangChain</span><span class="chip">LangGraph</span><span class="chip">Google ADK</span>
+              <span class="chip">Claude</span><span class="chip">MCP</span><span class="chip">Ollama</span><span class="chip">Hugging Face</span>
+              <span class="chip">Tinkercad</span><span class="chip">GitHub</span><span class="chip">Kaggle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="section-kicker">Projects</div><h2>Things I’m building and exploring.</h2></div>
+          <p>A mix of AI, data science, agentic workflows, and hands-on technical experiments.</p>
+        </div>
+        <div class="project-grid">
+          <article class="panel project">
+            <div><div class="tag">Machine Learning · Ongoing</div><h3>Restaurant Review Evaluation</h3><p>Developing a machine-learning workflow for evaluating restaurant reviews using a structured rubric, with data curation, analysis, visualization, and modeling.</p></div>
+            <div class="meta">Python · Pandas · NumPy · Matplotlib · Scikit-learn</div>
+          </article>
+          <article class="panel project">
+            <div><div class="tag">Agentic AI</div><h3>AI Agent & Vibe Coding</h3><p>Exploring AI-agent development with Google ADK and building usable experimental workflows through AI-assisted development.</p></div>
+            <div class="meta">Google ADK · AI agents · MCP · Prompt engineering</div>
+          </article>
+          <article class="panel project">
+            <div><div class="tag">Claude MCP · 3D</div><h3>Roblox + Blender Workflow</h3><p>Experimented with Claude MCP connected to Blender to create and modify 3D assets for a Roblox game, exploring tool-connected AI workflows.</p></div>
+            <div class="meta">Claude MCP · Blender · Roblox</div>
+          </article>
+          <article class="panel project">
+            <div><div class="tag">Hardware · Hackathon</div><h3>Fitness Tracking Smart Watch</h3><p>Built an Arduino-based smart-watch concept focused on fitness tracking, combining hardware design and coding with AI-assisted development.</p></div>
+            <div class="meta">Arduino · Tinkercad · AI-assisted coding</div>
+          </article>
+          <article class="panel project">
+            <div><div class="tag">Hackathon · 1st Place</div><h3>Digital Design — Iris Hackathon</h3><p>Worked on digital design involving encoding and decoding binary information into higher-level numerical representations using Tinkercad and Claude.</p></div>
+            <div class="meta">Tinkercad · Claude · Digital design</div>
+          </article>
+          <article class="panel project">
+            <div><div class="tag">Hackathon · Current</div><h3>Smart India Hackathon 2026</h3><p>Currently working on SIH Problem Statement 26117, focused on a sovereign on-premise agentic AI workbench for confidential industrial workflows.</p></div>
+            <div class="meta">Agentic AI · Open-weight models · Multimodal AI · Privacy</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="section-kicker">Campus Leadership</div><h2>Building communities, not just projects.</h2></div>
+        </div>
+        <div class="timeline">
+          <article class="item">
+            <div class="when">SEPTEMBER 2025 — PRESENT</div>
+            <h3>Event Management Team · Student Club, IIIT Dharwad</h3>
+            <p>Support campus event planning and on-ground execution, coordinate attendees, manage participant interactions, and work with student organizers to help events run smoothly.</p>
+          </article>
+          <article class="item">
+            <div class="when">SEPTEMBER 2025</div>
+            <h3>Event Volunteer · Free Fire Esports Tournament</h3>
+            <p>Helped run a one-week tournament involving 16+ teams of four players, with responsibilities spanning participant coordination, fair-play monitoring, and event operations.</p>
+          </article>
+          <article class="item">
+            <div class="when">2026</div>
+            <h3>AI Learning & Community</h3>
+            <p>Participated in the five-day Google × Kaggle vibe coding event and continued exploring AI agents, Claude MCP, AI skills, plugins, and practical AI-assisted development.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div><div class="section-kicker">Achievements</div><h2>A few milestones so far.</h2></div>
+        </div>
+        <div class="project-grid">
+          <div class="panel"><h3>🏆 Iris Hackathon</h3><p>1st place for a digital-design project involving binary encoding/decoding.</p></div>
+          <div class="panel"><h3>⚡ Google × Kaggle</h3><p>Five-day vibe coding program, followed by a two-week AI-agent project.</p></div>
+          <div class="panel"><h3>🤖 AI Exploration</h3><p>Hands-on experimentation with Claude MCP, Google ADK, LangChain, LangGraph, Ollama, and Hugging Face.</p></div>
+          <div class="panel"><h3>🎮 Campus Events</h3><p>Supported student-led events, including a 16+ team esports tournament.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="panel contact-card">
+            <div class="section-kicker">Contact</div>
+            <h2>Let’s build something useful.</h2>
+            <p>For collaborations, student communities, AI projects, or just a good technical conversation.</p>
+          </div>
+          <div class="panel">
+            <div class="contact-links">
+              <a class="contact-link" href="mailto:25bda066@iiitdwd.ac.in"><span>Email</span><small>25bda066@iiitdwd.ac.in ↗</small></a>
+              <a class="contact-link" href="https://github.com/MittaSaiVishruth" target="_blank" rel="noreferrer"><span>GitHub</span><small>MittaSaiVishruth ↗</small></a>
+              <a class="contact-link" href="https://www.linkedin.com/in/mitta-sai-vishruth-6b024038a" target="_blank" rel="noreferrer"><span>LinkedIn</span><small>Mitta Sai Vishruth ↗</small></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Mitta Sai Vishruth · Data Science & Artificial Intelligence · IIIT Dharwad
+  </footer>
+</body>
+</html>
